@@ -1,0 +1,16 @@
+.button {
+  @apply font-montserrat font-medium px-9 py-3 bg-[#212121] hover:bg-[#333] transition-all rounded-full text-white text-center min-w-fit w-[200px];
+}
+
+.glow_button {
+  @apply font-montserrat font-medium px-9 py-3 bg-[#212121] transition-all rounded-full text-white text-center min-w-fit w-[200px];
+
+  filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.4));
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.8));
+    background: #2c2c2c;
+  }
+}

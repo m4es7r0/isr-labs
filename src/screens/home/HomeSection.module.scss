@@ -1,0 +1,7 @@
+.header {
+  @apply min-h-screen min-w-full flex flex-col gap-5 justify-center items-center text-center;
+
+  & > a {
+    @apply mt-12;
+  }
+}
