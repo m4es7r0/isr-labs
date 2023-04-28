@@ -31,7 +31,7 @@ const ProcessSection: FC = () => {
           </div>
         </div>
         <div className="container mx-auto h-[2px] rounded-full bg-[#E0E0E0]"></div>
-        <div className="container mx-auto px-4 grid gap-[156px] grid-flow-col max-lg:flex flex-wrap justify-center items-center py-20">
+        <div className="container mx-auto px-4 py-20 grid grid-flow-col gap-[156px] max-lg:gap-20 max-lg:flex flex-wrap justify-center items-center">
           {icons.map((icon) => {
             return (
               <img
