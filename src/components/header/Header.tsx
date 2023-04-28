@@ -18,8 +18,8 @@ const Header: FC = () => {
   return (
     <nav
       className={clsx(styles.header, {
-        "text-black": scrolled,
-        "[&>ul>*]:hover:after:bg-black": scrolled,
+        "text-[#323232]": scrolled,
+        "[&>ul>*]:hover:after:bg-[#323232]": scrolled,
       })}
     >
       <ul>
@@ -32,7 +32,7 @@ const Header: FC = () => {
           <a href="#about">Про нас</a>
         </li>
         <li>
-          <a href="#">Процес</a>
+          <a href="#process">Процес</a>
         </li>
         <li>
           <a href="#">Правила</a>

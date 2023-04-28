@@ -6,7 +6,7 @@
   & > div {
     @apply max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center max-lg:text-center;
     & > h2 {
-      @apply text-lg font-semibold mb-1 max-sm:w-full max-lg:w-1/2;
+      @apply text-lg text-[#323232] font-semibold mb-1 max-sm:w-full max-lg:w-1/2;
     }
     & > p {
       @apply text-sm text-[#999] font-montserrat max-lg:w-1/2 max-md:w-full;

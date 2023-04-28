@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "url": "Broken.svg",
+    "alt": "Broken"
+  },
+  {
+    "id": 2,
+    "url": "Password.svg",
+    "alt": "Password"
+  },
+  {
+    "id": 3,
+    "url": "File Lock.svg",
+    "alt": "File Lock"
+  },
+  {
+    "id": 4,
+    "url": "Website.svg",
+    "alt": "Website"
+  },
+  {
+    "id": 5,
+    "url": "Key Digital.svg",
+    "alt": "Key Digital"
+  }
+]
