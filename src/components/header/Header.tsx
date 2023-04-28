@@ -38,7 +38,7 @@ const Header: FC = () => {
           <a href="#rules">Правила</a>
         </li>
         <li>
-          <a href="#">Зв’язок</a>
+          <a href="#contacts">Зв’язок</a>
         </li>
       </ul>
     </nav>

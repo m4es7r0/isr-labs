@@ -1,0 +1,7 @@
+.contacts {
+  @apply py-20 mt-[104px] bg-[#f6f6f8];
+
+  & > div {
+    @apply flex flex-1 justify-between items-center gap-5 max-lg:flex-col-reverse max-lg:gap-20;
+  }
+}
