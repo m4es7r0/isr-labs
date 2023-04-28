@@ -1,0 +1,15 @@
+.feature {
+  @apply flex flex-1 gap-4 text-start
+  max-lg:flex-col max-lg:items-center
+  max-xl:flex-col max-xl:justify-center max-xl:items-center max-xl:text-center;
+
+  & > div {
+    @apply max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center max-lg:text-center;
+    & > h2 {
+      @apply text-lg font-semibold mb-1 max-sm:w-full max-lg:w-1/2;
+    }
+    & > p {
+      @apply text-sm text-[#999] font-montserrat max-lg:w-1/2 max-md:w-full;
+    }
+  }
+}

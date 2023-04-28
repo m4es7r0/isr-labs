@@ -21,7 +21,7 @@ const HomeSection: FC = () => {
       <p className="text-5xl max-sm:text-3xl text-white font-montserrat font-extrabold px-4">
         Продемонструй свій талант
       </p>
-      <Button glow />
+      <Button glow>Capture</Button>
     </header>
   );
 };

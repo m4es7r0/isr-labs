@@ -29,7 +29,7 @@ const Header: FC = () => {
           </a>
         </li>
         <li>
-          <a href="#">Про нас</a>
+          <a href="#about">Про нас</a>
         </li>
         <li>
           <a href="#">Процес</a>
