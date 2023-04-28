@@ -3,6 +3,7 @@ import { FC } from "react";
 import AboutSection from "./screens/about/AboutSection";
 import HomeSection from "./screens/home/HomeSection";
 import ProcessSection from "./screens/process/ProcessSection";
+import RulesSection from "./screens/rules/RulesSection";
 
 import "./App.css";
 
@@ -12,7 +13,8 @@ const App: FC = () => {
       <HomeSection />
       <AboutSection />
       <ProcessSection />
-      <div className="min-h-screen"></div>
+      <RulesSection />
+      {/* <div className="min-h-screen"></div> */}
     </>
   );
 };

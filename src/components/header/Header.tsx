@@ -35,7 +35,7 @@ const Header: FC = () => {
           <a href="#process">Процес</a>
         </li>
         <li>
-          <a href="#">Правила</a>
+          <a href="#rules">Правила</a>
         </li>
         <li>
           <a href="#">Зв’язок</a>
