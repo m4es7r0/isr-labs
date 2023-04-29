@@ -55,7 +55,6 @@ const ContactsSection: FC = () => {
           <img src="/assets/form-cat1.png" alt="cat king" />
         </div>
       </section>
-      <section className="container mx-auto py-20 px-4"></section>
     </>
   );
 };

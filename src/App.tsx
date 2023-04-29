@@ -16,7 +16,6 @@ const App: FC = () => {
       <ProcessSection />
       <RulesSection />
       <ContactsSection />
-      {/* <div className="min-h-screen"></div> */}
     </>
   );
 };
