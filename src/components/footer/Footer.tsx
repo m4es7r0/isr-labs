@@ -16,7 +16,7 @@ const Footer: FC = () => {
           <h2 className="text-xl">Контактна інформація</h2>
           <figure className="flex gap-3">
             <img
-              src="/src/assets/telegram.svg"
+              src="/assets/telegram.svg"
               alt="telegram"
               className="h-7 w-7"
             />
@@ -25,11 +25,7 @@ const Footer: FC = () => {
             </a>
           </figure>
           <figure className="flex gap-3">
-            <img
-              src="/src/assets/letter.svg"
-              alt="letter"
-              className="h-7 w-7"
-            />
+            <img src="/assets/letter.svg" alt="letter" className="h-7 w-7" />
             <a href={`mailto:${import.meta.env.VITE_CONTACT_EMAIL}`}>
               {import.meta.env.VITE_CONTACT_EMAIL}
             </a>
@@ -39,17 +35,17 @@ const Footer: FC = () => {
         <ul>
           <li>
             <a>
-              <img src="/src/assets/letter-2.svg" alt="letter" />
+              <img src="/assets/letter-2.svg" alt="letter" />
             </a>
           </li>
           <li>
             <a>
-              <img src="/src/assets/telegram-2.svg" alt="telegram" />
+              <img src="/assets/telegram-2.svg" alt="telegram" />
             </a>
           </li>
           <li>
             <a>
-              <img src="/src/assets/card.svg" alt="bank card" />
+              <img src="/assets/card.svg" alt="bank card" />
             </a>
           </li>
         </ul>
