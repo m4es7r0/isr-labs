@@ -46,7 +46,7 @@ const ContactsSection: FC = () => {
 
   return (
     <>
-      <div id="contacts" className="invisible h-0 -mt-[104px]"></div>
+      <div id="contacts" className="invisible h-0 -mt-[88px]"></div>
       <section className={styles.contacts}>
         <div className="container mx-auto px-4">
           <form

@@ -4,7 +4,7 @@ import styles from "./RulesSection.module.scss";
 const RulesSection: FC = () => {
   return (
     <>
-      <div id="rules" className="invisible h-0 -mt-[104px]"></div>
+      <div id="rules" className="invisible h-0 -mt-[88px]"></div>
       <section className={styles.rules}>
         <h1>Правила гри</h1>
         <div>

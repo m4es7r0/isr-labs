@@ -1,5 +1,5 @@
 .about {
-  @apply container mx-auto py-20 mt-[104px] flex flex-col gap-16 items-center text-center;
+  @apply container mx-auto py-20 mt-[88px] flex flex-col gap-16 items-center text-center;
 
   & > div:last-of-type {
     @apply grid gap-8 grid-cols-3 px-4 items-start max-lg:grid-cols-1;

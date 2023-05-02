@@ -7,7 +7,7 @@ import icons from "../../data/process-icons.json";
 const ProcessSection: FC = () => {
   return (
     <>
-      <div id="process" className="invisible h-0 -mt-[104px]"></div>
+      <div id="process" className="invisible h-0 -mt-[88px]"></div>
       <section className={styles.process}>
         <div className="container mx-auto">
           <div className="flex flex-col gap-12">

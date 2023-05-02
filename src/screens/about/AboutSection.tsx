@@ -9,7 +9,7 @@ import features from "../../data/feature.json";
 const AboutSection: FC = () => {
   return (
     <>
-      <div id="about" className="invisible h-0 -mt-[104px]"></div>
+      <div id="about" className="invisible h-0 -mt-[88px]"></div>
       <section className={styles.about}>
         <h1 className="font-montserrat font-bold text-4xl text-[#323232] px-4 w-1/2 max-xl:w-full max-lg:w-full">
           Ми стовимо платформу для вашої командної гри

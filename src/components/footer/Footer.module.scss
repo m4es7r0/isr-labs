@@ -1,0 +1,14 @@
+.footer {
+  @apply bg-[#212121];
+
+  & ul {
+    @apply flex gap-9;
+    & > li a {
+      @apply block p-3 rounded-full bg-[#f6f6f8];
+
+      & > img {
+        @apply w-7 h-7 object-fill;
+      }
+    }
+  }
+}
