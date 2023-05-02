@@ -12,7 +12,6 @@ interface Inputs {
 }
 
 const ContactsSection: FC = () => {
-  console.log(import.meta.env.VITE_SERVER_URL);
   const [serverError, setServerError] = useState<null | {
     message: string;
     type: number;
