@@ -1,15 +1,22 @@
 import { FC, PropsWithChildren } from "react";
 import styles from "./Button.module.scss";
 
-const Button: FC<PropsWithChildren<{ glow?: boolean; form?: boolean }>> = ({
+interface IButton {
+  glow: boolean;
+  form: boolean;
+  href: string;
+}
+
+const Button: FC<PropsWithChildren<Partial<IButton>>> = ({
   glow = false,
+  href = "#contacts",
   form,
   children,
 }) => {
   return (
     <>
       {!form ? (
-        <a href="#" tabIndex={-1} style={{ width: `${form ? "100%" : ""}` }}>
+        <a href={href} tabIndex={-1} style={{ width: `${form ? "100%" : ""}` }}>
           <button className={glow ? styles.glow_button : styles.button}>
             {children}
           </button>
