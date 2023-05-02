@@ -4,4 +4,16 @@
   & > div {
     @apply flex flex-1 justify-between items-center gap-5 max-lg:flex-col-reverse max-lg:gap-20;
   }
+
+  input {
+    @apply placeholder:font-montserrat placeholder:text-sm placeholder:text-[#212121] bg-transparent min-w-full py-4 px-8 border border-[#212121] rounded-[52px] text-[#212121] text-sm font-montserrat;
+  }
+  textarea {
+    @apply placeholder:font-montserrat placeholder:text-sm placeholder:text-[#212121] resize-none min-h-[154px] max-h-[306px] min-w-full bg-transparent p-8 border border-[#212121] rounded-[52px] text-[#212121] text-sm font-montserrat;
+    scrollbar-width: none;
+  }
+
+  & form > span {
+    @apply text-red-500;
+  }
 }

@@ -1,27 +1,10 @@
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 
-import clsx from "clsx";
 import styles from "./Header.module.scss";
 
 const Header: FC = () => {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const cleanUp = () => {
-      setScrolled(window.scrollY >= window.innerHeight);
-    };
-
-    window.addEventListener("scroll", cleanUp);
-    return () => window.removeEventListener("scroll", cleanUp);
-  });
-
   return (
-    <nav
-      className={clsx(styles.header, {
-        "text-[#323232]": scrolled,
-        "[&>ul>*]:hover:after:bg-[#323232]": scrolled,
-      })}
-    >
+    <nav className={styles.header}>
       <ul>
         <li>
           <a href="#" tabIndex={0}>

@@ -1,15 +1,32 @@
-import { FC, useState } from "react";
-
-import Input from "../../components/inputs/Input";
-import TextArea from "../../components/inputs/TextArea";
+import { FC } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
 
 import Button from "../../components/button/Button";
 import styles from "./ContactsSection.module.scss";
 
+interface Inputs {
+  name: string;
+  email: string;
+  about: string;
+}
+
 const ContactsSection: FC = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [aboutMe, setAboutMe] = useState("");
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<Inputs>();
+
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    console.log(JSON.stringify(data));
+    fetch("http://localhost:4000/registration", {
+      method: "POST",
+      headers: { "content-type": "aplication/json" },
+      body: JSON.stringify(data, null, 2),
+    });
+    reset();
+  };
 
   return (
     <>
@@ -17,39 +34,62 @@ const ContactsSection: FC = () => {
       <section className={styles.contacts}>
         <div className="container mx-auto px-4">
           <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              setName("");
-              setEmail("");
-              setAboutMe("");
-            }}
+            onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col gap-5 items-center min-w-0"
           >
-            <h1 className="font-montserrat font-semibold text-3xl text-center">
+            <h1 className="font-montserrat font-semibold text-[#323232] text-3xl text-center">
               Реєстрація на захід
             </h1>
-            <Input
-              value={name}
-              onchange={(e: any) => setName(e.target.value)}
+
+            <input
               placeholder="ПІБ"
-              name="fullname"
-              required
+              autoComplete="off"
+              minLength={3}
+              {...register("name", {
+                required: "this field is required",
+                minLength: {
+                  message: "min length 3",
+                  value: 3,
+                },
+              })}
             />
-            <Input
-              value={email}
-              onchange={(e: any) => setEmail(e.target.value)}
+            {errors.name && <span>{errors.name.message}</span>}
+
+            <input
               placeholder="gmail@gmail.com"
-              name="email"
               type="email"
-              required
+              {...register("email", {
+                required: "this field is required",
+                minLength: {
+                  message: "min length 5",
+                  value: 5,
+                },
+                pattern: {
+                  message: "invalid email",
+                  // eslint-disable-next-line
+                  value: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+                },
+              })}
             />
-            <TextArea
-              value={aboutMe}
-              onchange={(e: any) => setAboutMe(e.target.value)}
+            {errors.email && <span>{errors.email.message}</span>}
+
+            <textarea
+              autoComplete="off"
               placeholder="Напишіть трохи про себе"
-              name="about-me"
-              required
-            ></TextArea>
+              onInput={(e) => {
+                e.currentTarget.style.height = "";
+                e.currentTarget.style.height = `${e.currentTarget.scrollHeight}px`;
+              }}
+              {...register("about", {
+                required: "this field is required",
+                maxLength: {
+                  message: "max length 152",
+                  value: 152,
+                },
+              })}
+            ></textarea>
+            {errors.about && <span>{errors.about.message}</span>}
+
             <Button form>Надіслати</Button>
           </form>
           <img src="/assets/form-cat1.png" alt="cat king" />

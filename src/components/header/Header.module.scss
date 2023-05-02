@@ -1,5 +1,5 @@
 .header {
-  @apply backdrop-blur-md shadow-md flex items-center font-montserrat font-medium text-white transition-colors max-sm:hidden;
+  @apply backdrop-blur-md shadow-md bg-[rgba(0,0,0,0.4)] flex items-center font-montserrat font-medium text-white transition-colors max-sm:hidden;
   top: 0;
   left: 0;
   width: 100%;
