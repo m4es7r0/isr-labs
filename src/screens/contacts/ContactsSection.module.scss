@@ -12,8 +12,4 @@
     @apply placeholder:font-montserrat placeholder:text-sm placeholder:text-[#212121] resize-none min-h-[154px] max-h-[306px] min-w-full bg-transparent p-8 border border-[#212121] rounded-[52px] text-[#212121] text-sm font-montserrat;
     scrollbar-width: none;
   }
-
-  & form > span {
-    @apply text-red-500;
-  }
 }

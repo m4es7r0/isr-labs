@@ -1,5 +1,5 @@
 import axios from "axios";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 
 import Button from "../../components/button/Button";
@@ -12,6 +12,12 @@ interface Inputs {
 }
 
 const ContactsSection: FC = () => {
+  const [serverError, setServerError] = useState<null | {
+    message: string;
+    type: number;
+  }>(null);
+  const [serverResp, setServerResp] = useState<null | boolean>(null);
+
   const {
     register,
     handleSubmit,
@@ -20,8 +26,22 @@ const ContactsSection: FC = () => {
   } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    axios.post("http://localhost:4000/registration", data);
     reset();
+    axios
+      .post(import.meta.env.VITE_SERVER_URL, data)
+      .then((res) => {
+        res.status === 201 ? setServerResp(true) : null;
+      })
+      .catch((e) => {
+        console.error(e);
+        setServerError(e?.response?.data);
+      })
+      .finally(() =>
+        setTimeout(() => {
+          setServerResp(null);
+          setServerError(null);
+        }, 3200)
+      );
   };
 
   return (
@@ -49,7 +69,9 @@ const ContactsSection: FC = () => {
                 },
               })}
             />
-            {errors.name && <span>{errors.name.message}</span>}
+            {errors.name && (
+              <span className="text-red-500">{errors.name.message}</span>
+            )}
 
             <input
               placeholder="gmail@gmail.com"
@@ -67,7 +89,9 @@ const ContactsSection: FC = () => {
                 },
               })}
             />
-            {errors.email && <span>{errors.email.message}</span>}
+            {errors.email && (
+              <span className="text-red-500">{errors.email.message}</span>
+            )}
 
             <textarea
               autoComplete="off"
@@ -84,8 +108,18 @@ const ContactsSection: FC = () => {
                 },
               })}
             ></textarea>
-            {errors.text && <span>{errors.text.message}</span>}
+            {errors.text && (
+              <span className="text-red-500">{errors.text.message}</span>
+            )}
 
+            {serverError && (
+              <span className="text-red-500">{serverError.message}</span>
+            )}
+            {serverResp && !serverError ? (
+              <span className="text-green-500">
+                Вашу заявку успішно оброблено 👌
+              </span>
+            ) : null}
             <Button form>Надіслати</Button>
           </form>
           <img src="/assets/form-cat1.png" alt="cat king" />
