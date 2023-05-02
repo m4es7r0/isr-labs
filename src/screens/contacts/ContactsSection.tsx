@@ -1,3 +1,4 @@
+import axios from "axios";
 import { FC } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 
@@ -7,7 +8,7 @@ import styles from "./ContactsSection.module.scss";
 interface Inputs {
   name: string;
   email: string;
-  about: string;
+  text: string;
 }
 
 const ContactsSection: FC = () => {
@@ -19,12 +20,7 @@ const ContactsSection: FC = () => {
   } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(JSON.stringify(data));
-    fetch("http://localhost:4000/registration", {
-      method: "POST",
-      headers: { "content-type": "aplication/json" },
-      body: JSON.stringify(data, null, 2),
-    });
+    axios.post("http://localhost:4000/registration", data);
     reset();
   };
 
@@ -80,7 +76,7 @@ const ContactsSection: FC = () => {
                 e.currentTarget.style.height = "";
                 e.currentTarget.style.height = `${e.currentTarget.scrollHeight}px`;
               }}
-              {...register("about", {
+              {...register("text", {
                 required: "this field is required",
                 maxLength: {
                   message: "max length 152",
@@ -88,7 +84,7 @@ const ContactsSection: FC = () => {
                 },
               })}
             ></textarea>
-            {errors.about && <span>{errors.about.message}</span>}
+            {errors.text && <span>{errors.text.message}</span>}
 
             <Button form>Надіслати</Button>
           </form>
